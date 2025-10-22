@@ -1,20 +1,21 @@
 import { getUserIDs } from "./data.mjs";
+import { processData } from "./data.mjs";
 
-export function populateUserSelect() {
+export function activateUserSelect() {
     const userSelector = document.getElementById("userSelect");
-    const userIds = getUserIDs();
-    userIds.forEach((userId) => {
-        userSelector.appendChild(createOption(userId));
+    const userIDs = getUserIDs();
+    userIDs.forEach((userID) => {
+        userSelector.appendChild(createOption(userID));
     });
     userSelector.addEventListener("change", (e) => {
-        const userId = e.target.value;
-        console.log(userId);
+        const userID = e.target.value;
+        processData(userID);
     });
 }
 
-function createOption(userId) {
+function createOption(userID) {
     const option = document.createElement("option");
-    option.value = userId;
-    option.textContent = `User ${userId}`;
+    option.value = userID;
+    option.textContent = `User ${userID}`;
     return option;
 }

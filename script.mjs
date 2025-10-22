@@ -5,9 +5,9 @@
 // You can't open the index.html file using a file:// URL.
 
 import { countUsers } from "./common.mjs";
-import { populateUserSelect } from "./userSelection.mjs"
+import { activateUserSelect } from "./userSelection.mjs"
 
 window.onload = function () {
   //document.querySelector("body").innerText = `There are ${countUsers()} users`;
-  populateUserSelect();
+  activateUserSelect();
 };
