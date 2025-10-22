@@ -7,6 +7,7 @@ export function activateUserSelect() {
     userIDs.forEach((userID) => {
         userSelector.appendChild(createOption(userID));
     });
+
     userSelector.addEventListener("change", (e) => {
         const userID = e.target.value;
         processData(userID);
